@@ -1,5 +1,5 @@
 # Runs on PR to main
-name: 'Plan Production on PR to Main'
+name: 'Plan Development on PR to Main'
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
       - main
     paths:
       - '**.tf'
-      - 'prod.tfvars'
+      - 'dev.tfvars'
 
 permissions:
   issues: write
@@ -22,7 +22,7 @@ env:
   ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
   ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
   ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-  ENVIRONMENT: prod
+  ENVIRONMENT: dev
 
 jobs:
   terraform:

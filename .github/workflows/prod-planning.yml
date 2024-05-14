@@ -61,7 +61,7 @@ jobs:
     # Run a Terraform plan
     - name: Terraform plan
       id: plan
-      run: terraform plan -var-file="prod.tfvars"
+      run: terraform plan -no-color -var-file="prod.tfvars"
 
     # Add a comment to pull requests with plan results weeeeeee
     - name: Add Plan Comment
